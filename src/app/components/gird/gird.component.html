@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <ion-item lines="none">
+    <h1 slot="start">Customers</h1>
+    <ion-searchbar
+      slot="end"
+      style="height: 40px; width: 340px;"
+      [(ngModel)]="searchTerm"
+      (ionInput)="filterCustomers()"
+    ></ion-searchbar>
+    <ion-button class="button" color=" #01274A" slot="end" (click)="openCustomerModal()">
+      <ion-icon slot="start" name="person-add-outline"></ion-icon>
+      Add New Customer
+    </ion-button>
+  </ion-item>
+
+  <table>
+    <tr>
+      <th class="sr">Sr. No.</th>
+      <th class="col">Customer Name</th>
+      <th class="col">Shop Name</th>
+      <th class="col">Mobile No.</th>
+      <th class="col">Tax No.</th>
+      <th class="col">Address</th>
+      <th class="col">City</th>
+      <th class="col">Actions</th>
+    </tr>
+    <tr *ngFor="let customer of filteredCustomers; index as i">
+      <td class="sr1">{{ i + 1 }}</td>
+      <td class="col1">{{ customer.name }}</td>
+      <td class="col1">{{ customer.shopName }}</td>
+      <td class="col1">{{ customer.mobileNo }}</td>
+      <td class="col1">{{ customer.taxNo }}</td>
+      <td class="col1">{{ customer.address }}</td>
+      <td class="col1">{{ customer.city }}</td>
+      <td class="icon">
+        <ion-icon name="create" (click)="openCustomerModal(customer)"></ion-icon>
+        <ion-icon name="trash-outline" (click)="deleteCustomer(customer)"></ion-icon>
+      </td>
+    </tr>
+  </table>
+</ion-content>

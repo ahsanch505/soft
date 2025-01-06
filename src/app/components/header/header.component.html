@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+  <ion-list class="list">
+  <ion-grid style="background-color: white;margin-top: 10px;" >
+    <ion-row>
+      <ion-col lines="none">
+        <img class="img" src="../../assets/c1af3c37e476801f43916ad9b1387a85.png" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list class="list1">
+    <ion-list class="sidebar">
+      <ul class="menu">
+        <li  >Customers</li>
+        <li>Cash and Gold Received</li>
+        <li class="item" >
+          Invoices
+          <ion-icon (click)="toggleDropdown('invoices')" style="margin-left: 100px;" name="chevron-forward-outline"></ion-icon>
+        </li>
+        <ul *ngIf="dropdowns.invoices" class="dropdown">
+          <li class="dropdown-item">Sales Invoice</li>
+          <li class="dropdown-item">Purchase Invoice</li>
+        </ul>
+        <li class="item" >
+          Reports
+          <ion-icon  style="margin-left: 100px;" name="chevron-forward-outline"></ion-icon>
+        </li>
+        <ul *ngIf="dropdowns.reports" class="dropdown">
+          <li class="dropdown-item">Expense</li>
+          <li class="dropdown-item">Ledger</li>
+          <li class="dropdown-item">Salary</li>
+          <li class="dropdown-item">Daily Cash</li>
+          <li class="dropdown-item">Profit & Loss</li>
+          <li class="dropdown-item">Internal Manufacturing</li>
+        </ul>
+        <li>Employee</li>
+      </ul>
+    </ion-list>
+  </ion-list>
+ 
+</ion-list>
+
+</ion-content>

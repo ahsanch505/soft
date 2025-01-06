@@ -1,0 +1,7 @@
+{
+  "name": "soft",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
